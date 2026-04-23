@@ -1,0 +1,29 @@
+/* 01. single element selector */
+h2 { color: red;}
+
+
+/* 02. group  element selector */
+h3, h4{
+    color: blue;
+}
+
+/* 03. class selector  */
+.paragraph-style{
+    background-color: aqua;
+    font-size: 10px;
+}
+
+/* 04. ID selector which is used to select single element */
+#header {
+    color: blueviolet;
+}
+
+/* 05. Descende selector */
+nav a {
+    color: rgb(228, 23, 23);
+}
+
+/* 06. universal selector */
+*{
+    font-size: 100px;
+}

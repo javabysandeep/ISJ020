@@ -1,0 +1,19 @@
+.container-a {
+    /* top right bottom left */
+    margin: 0px 10px 50px 100px ;
+    
+    
+    border: 10px solid blue;
+    
+    /*  */
+    padding: 10px 20px 30px 100px;
+  
+  
+
+}
+
+.container-b {
+     margin: 0px;
+    border: 10px solid blue;
+    padding: 10px;
+}
