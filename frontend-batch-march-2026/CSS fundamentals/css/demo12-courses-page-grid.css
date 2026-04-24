@@ -1,0 +1,48 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 239, 17, 0.933);
+    padding: 16px 32px;
+
+}
+.nav-logo{
+    flex-shrink: 0;
+    
+}
+
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.nav-links a{
+    color: #121111;
+    text-decoration: none;
+    font-size: 25px;
+
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    border: 2px solid blue;
+    gap: 10px;
+}
+
+.course-item {
+    border: 5px solid red;
+    text-align: center;
+
+}
+
+.course-item img {
+    width: 200px;
+    height: 150px;
+
+}
