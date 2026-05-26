@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile - DOM Manipulation Project</title>
+    <link rel="stylesheet" href="../css/student-profile.css">
+</head>
+<body>
+
+    <!-- =========================================================
+         SECTION 1: Page Header
+         DOM Concept: Selecting & changing text content
+    ========================================================== -->
+    <header class="page-header">
+        <h1 id="page-title">🎓 Student Profile Manager</h1>
+        <p id="page-subtitle">DOM Manipulation Mini Project</p>
+        <button id="btn-toggle-theme">🌙 Dark Mode</button>
+    </header>
+
+    <div class="container">
+
+        <!-- =========================================================
+             SECTION 2: Profile Form  (LEFT PANEL)
+             DOM Concept: Reading form input values
+        ========================================================== -->
+        <section class="form-panel">
+            <h2>📝 Enter Student Details</h2>
+
+            <div class="form-group">
+                <label for="input-name">Full Name</label>
+                <input type="text" id="input-name" placeholder="e.g. Ravi Kumar" />
+            </div>
+
+            <div class="form-group">
+                <label for="input-rollno">Roll Number</label>
+                <input type="text" id="input-rollno" placeholder="e.g. ISJ-2025-001" />
+            </div>
+
+            <div class="form-group">
+                <label for="input-course">Course</label>
+                <select id="input-course">
+                    <option value="">-- Select Course --</option>
+                    <option value="Full Stack Web Development">Full Stack Web Development</option>
+                    <option value="Python Programming">Python Programming</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="input-marks">Marks (out of 100)</label>
+                <input type="number" id="input-marks" placeholder="e.g. 85" min="0" max="100" />
+            </div>
+
+            <div class="form-group">
+                <label for="input-email">Email</label>
+                <input type="email" id="input-email" placeholder="e.g. ravi@example.com" />
+            </div>
+
+            <!-- Skill Adder -->
+            <div class="form-group skill-adder">
+                <label for="input-skill">Add a Skill</label>
+                <div class="skill-input-row">
+                    <input type="text" id="input-skill" placeholder="e.g. JavaScript" />
+                    <button id="btn-add-skill">+ Add</button>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="btn-group">
+                <button id="btn-create-profile" class="btn-primary">🚀 Create Profile</button>
+                <button id="btn-reset-form" class="btn-secondary">🔄 Reset</button>
+            </div>
+        </section>
+
+
+        <!-- =========================================================
+             SECTION 3: Profile Card  (RIGHT PANEL)
+             DOM Concept: innerHTML, textContent, createElement
+        ========================================================== -->
+        <section class="profile-panel">
+            <h2>👤 Student Profile Card</h2>
+
+            <!-- Default / Empty State -->
+            <div id="empty-state" class="empty-state">
+                <p>📋 Fill the form and click <strong>Create Profile</strong> to see the card here.</p>
+            </div>
+
+            <!-- Profile Card (hidden until form is submitted) -->
+            <div id="profile-card" class="profile-card hidden">
+
+                <!-- Avatar + Status Badge -->
+                <div class="card-header">
+                    <div id="profile-avatar" class="avatar">?</div>
+                    <div class="card-header-info">
+                        <h3 id="card-name">--</h3>
+                        <span id="card-rollno" class="roll-badge">--</span>
+                    </div>
+                    <!-- Edit / Save toggle button -->
+                    <button id="btn-edit" class="btn-edit">✏️ Edit</button>
+                </div>
+
+                <!-- Details Section -->
+                <div class="card-details">
+                    <div class="detail-row">
+                        <span class="detail-label">📚 Course</span>
+                        <span id="card-course" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">✉️ Email</span>
+                        <span id="card-email" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📊 Marks</span>
+                        <span id="card-marks" class="detail-value">--</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">🏆 Grade</span>
+                        <span id="card-grade" class="grade-badge">--</span>
+                    </div>
+                </div>
+
+                <!-- Skills Tags Section -->
+                <div class="card-skills">
+                    <h4>🛠️ Skills</h4>
+                    <div id="skills-container">
+                        <!-- skill tags will be added here dynamically -->
+                    </div>
+                    <p id="no-skills-msg" class="no-skills-msg">No skills added yet.</p>
+                </div>
+
+                <!-- Marks Progress Bar -->
+                <div class="progress-section">
+                    <h4>📈 Performance</h4>
+                    <div class="progress-bar-bg">
+                        <div id="progress-bar" class="progress-bar-fill" style="width: 0%"></div>
+                    </div>
+                    <span id="progress-label">0%</span>
+                </div>
+
+            </div><!-- end #profile-card -->
+        </section>
+
+    </div><!-- end .container -->
+
+
+    <!-- =========================================================
+         SECTION 4: Activity Log
+         DOM Concept: appendChild, createElement, prepend
+    ========================================================== -->
+    <section class="log-section">
+        <h2>📜 DOM Activity Log <button id="btn-clear-log" class="btn-clear">Clear</button></h2>
+        <ul id="activity-log">
+            <li class="log-item log-info">✅ Page loaded. Ready to manipulate the DOM!</li>
+        </ul>
+    </section>
+
+
+    <script src="../js/student-profile.js"></script>
+</body>
+</html>
