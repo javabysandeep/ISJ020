@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script src="/js/demo5-form.js" defer></script>
+    <link rel="stylesheet" href="/css/demo5-form.css">
+</head>
+
+<body>
+
+    <form id="enrollForm">
+
+        <div class="field">
+            <label for="studentName">Full Name</label>
+            <input type="text" id="studentName" />
+            <span id="studentNameError" class="error"></span>
+        </div>
+
+        <div class="field">
+            <label for="studentEmail">Email</label>
+            <input type="email" id="studentEmail" />
+            <span id="studentEmailError" class="error"></span>
+        </div>
+
+        <div class="field">
+            <label for="">Course</label>
+            <select id="course">
+                <option value="">Select..</option>
+                <option>Fullstack Java</option>
+                <option>Fullstack Python</option>
+                <option>Data Analytics</option>
+            </select>
+        </div>
+        <p id="preview"></p>
+        <button type="submit">Create Profile</button>
+
+    </form>
+
+</body>
+
+</html>
