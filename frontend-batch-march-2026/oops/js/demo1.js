@@ -101,9 +101,12 @@ console.log(`product 2 details  = ${p2.name} | ${p2.price} | ${Product.shipper}`
 
 
 class Person {
+    #password;
     constructor(name, email) {
         this.name = name;
         this.email = email;
+        this.#password = 'abc';
+
     }
 
     //instance method
@@ -115,8 +118,11 @@ class Person {
     static display() {
         return `sample diplay`;
     }
+    #calculate(){}
 
 }
 const person1 = new Person("vedant", "vedant@gmail.com");
 console.log(person1.introduce());//calling instance method
 console.log(Person.display());//calling static method
+console.log(person1.password);
+//person1.calculate();//error
