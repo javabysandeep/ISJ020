@@ -63,10 +63,67 @@ const student = {
 const studentString = JSON.stringify(student);
 console.log(studentString);
 
-localStorage.setItem("student",studentString);
+localStorage.setItem("student", studentString);
 
 console.log(`local storage ${localStorage.getItem("student")}`);
 
 //localStorage.clear();
 
-sessionStorage.setItem("user",studentString);
+sessionStorage.setItem("user", studentString);
+
+
+function makeCounter(start = 0) {
+    let count = start; // count cannot be accessed outside the function
+    return {
+        increment() { count++; },
+        decrement() { count--; },
+        reset() { count = start; },
+        value() { return count; }
+    };
+}
+const enrollCounter = makeCounter(0);
+enrollCounter.increment();
+enrollCounter.increment();
+console.log(enrollCounter.value());
+
+
+// curry : a function that returns another function
+const multiply = (a) => (b) => a * b;
+const double = multiply(2);  // (b) => 2 * b
+console.log(`double which got function = ${double}`);
+console.log(`double = ${double(5)}`); // (b) => 2 * b ===> 10
+
+const triple = multiply(3); //(b) => 3 * b
+console.log(`tripple = ${triple(5)}`); // /(b) => 3 * 5 => 15
+
+
+//memoization -- function result is stored in cache
+
+
+//expensive calculation
+function calculateBatchStats(scores) {
+    console.log("computing the stats.....(slow)");
+    const avg = scores.reduce((a, b) => a + b, 0) / scores.length;
+    return { avg, max: Math.max(...scores), min: Math.min(...scores) };
+}
+
+function memoize(fn) {
+    const cache = new Map();
+    return function (...args) {
+        const key = JSON.stringify(args);
+        if (cache.has(key)) {
+            console.log("Cache hit for", key);
+            return cache.get(key);
+        }
+        const result = fn.apply(this, args);
+        cache.set(key, result);
+        return result;
+
+    };
+}
+
+const memoStats = memoize(calculateBatchStats);
+
+memoStats([88,92,74]); // function call
+memoStats([88,92,74]); // no function call
+memoStats([88,70]); // function call
