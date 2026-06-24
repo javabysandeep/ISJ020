@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Manager</title>
+    <script src="/js/script.js" defer></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Tracker</h1>
+        <div class="balance-card">
+
+            <h4>Current Balance:
+                <span id="balance" class="income-expense">INR. 0.00</span>
+            </h4>
+            <div class="income-expense">
+                <div>
+                    <p>Income: </p>
+                    <span id="incomeTotal" class="income-amt">INR. 0.00</span>
+                </div>
+
+                <div>
+                    <p>Expense: </p>
+                    <span id="expenseTotal" class="expense-amt">INR. 0.00</span>
+                </div>
+            </div>
+        </div>
+        <form id="transactionForm">
+            <input type="text" id="description" placeholder="Description" required>
+            <input type="number" id="amount" placeholder="Amount" required>
+            <select id="type" required>
+                <option value="">Select Transaction Type</option>
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <select id="category" required>
+                <option value="">Select Category</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="utilities">Utilities</option>
+                <option value="salary">Salary</option>
+                <option value="other">Other</option>
+            </select>
+            <button type="submit">Add Transaction</button>
+        </form>
+        <h3>Transaction History</h3>
+        <ul id="transactionList"></ul>
+    </div>
+</body>
+
+</html>
